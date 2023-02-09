@@ -1,0 +1,27 @@
+.headerPart {
+    background: #f5f5f5;
+    padding: 40px;
+}
+
+button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.class1 {
+    background: red;
+    min-height: 100px;
+    width: 100%;
+}
+
+.class2 {
+    min-height: 100px;
+    width: 100%;
+    background: green;
+}
+
+.alertAbsolute {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}

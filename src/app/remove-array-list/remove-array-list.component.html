@@ -1,0 +1,15 @@
+<div class="headerPart">
+    <h1>Removing list from array</h1>
+</div>
+
+<div *ngFor="let item of arrayNested">
+    {{item.id}} | {{item.name}} | {{item.age}} 
+    <strong *ngFor="let loc of item.innerArray">{{loc.location}}, </strong>
+    <input type="checkbox" [checked]="isChecked" (change)="checkChange(item, $event)"> &nbsp;
+    <button (click)="deleteButton(item)" type="button">x</button>
+</div>
+
+<button type="button" (click)="removeFirst()">Remove From First</button>&nbsp;
+<button type="button" (click)="removeLast()">Remove From Last</button>&nbsp;
+<button type="button" (click)="sendSelected()">Send Selected</button>&nbsp;
+<button type="button" (click)="deleteSelected()">Delete Selected</button>

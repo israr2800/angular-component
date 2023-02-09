@@ -1,0 +1,33 @@
+<div class="headerPart">
+    <h1>Form Group with Inner Form Group</h1>
+</div>
+
+
+<form [formGroup]="addForm">
+    <input type="text" formControlName="username" [(ngModel)]="_username" placeholder="username">
+    <input type="text" formControlName="age" [(ngModel)]="_age" placeholder="age">
+
+    <p>&nbsp;</p>
+    <p class="heading">Inner Form</p>
+    <div formGroupName="innerForm">
+        <input type="text" formControlName="mobile" [(ngModel)]="_mobile" placeholder="mobile">
+        <input type="text" formControlName="email" [(ngModel)]="_email" placeholder="email">
+
+        <p>&nbsp;</p>
+        <p class="heading">Sub Inner form</p>
+        <div formGroupName="subInnerForm">
+            <input type="text" formControlName="innerMobile" [(ngModel)]="_innerMobile" placeholder="mobile">
+            <input type="text" formControlName="innerEmail" [(ngModel)]="_innerEmail" placeholder="email">
+        </div>
+
+    </div>
+    
+    <p>&nbsp;</p>
+    <p class="heading">Second inner form</p>
+    <div formGroupName="innerForm2">
+        <input type="text" formControlName="mobile2" [(ngModel)]="_mobile2" placeholder="mobile">
+        <input type="text" formControlName="email2" [(ngModel)]="_email2" placeholder="email">
+    </div>
+
+    <button (click)="submitButton()">Submit Form</button>
+</form>

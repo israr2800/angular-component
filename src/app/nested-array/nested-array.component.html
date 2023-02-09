@@ -1,0 +1,16 @@
+<div class="headerPart">
+    <h1>Nested Array List</h1>
+</div>
+
+<ul *ngFor="let item of newList.carts; index as i">
+    <li>discountedTotal: {{item.discountedTotal}}</li>
+    <li>total: {{item.total}}</li>
+    <li>totalProducts: {{item.totalProducts}}</li>
+
+    <ul *ngFor="let inner of item.products">
+        <li>
+                title: {{inner.title}} &nbsp; | &nbsp;  Price: {{inner.price}} 
+        </li>
+    </ul>
+
+</ul>

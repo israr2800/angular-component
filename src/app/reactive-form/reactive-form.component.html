@@ -1,0 +1,47 @@
+<div class="headerPart">
+    <h3>Reactive Form</h3>
+    <ul>
+        <li>Form Validation</li>
+        <li>Post Data from API</li>
+    </ul>
+</div>
+
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show alertAbsolute" role="alert">
+    <strong>Data Send!</strong> Data has been sent to API Successfull!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="container">
+    <form [formGroup]="reactiveform" [ngClass]="{'has-error': submitted}">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Full Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="submitted && reactiveform.controls.name.errors">
+                <small *ngIf="name.errors?.required" class="form-text text-danger">Name Required</small>
+                <small *ngIf="name.errors?.minlength" class="form-text text-danger">Min length should be 4 Charector</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Location</label>
+            <input type="text" class="form-control" formControlName="location">
+            <div *ngIf="submitted && reactiveform.controls.location.errors">
+                <small *ngIf="location.errors?.required" class="form-text text-danger">Location Required</small>
+                <small *ngIf="location.errors?.minlength" class="form-text text-danger">Min length should be 4 Charector</small>
+                <small *ngIf="location.errors?.pattern" class="form-text text-danger">Only alphabets allowed</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+            <div *ngIf="submitted && reactiveform.controls.email.errors">
+                <small *ngIf="email.errors?.required" class="form-text text-danger">Location Required</small>
+                <small *ngIf="email.errors?.email" class="form-text text-danger">Wrong Email Pattern</small>
+            </div>
+        </div>
+        <button type="submit" (click)="formSubmitbutton()" class="btn btn-success">Submit Form</button>
+        <button type="submit" (click)="resetForm()" class="btn btn-danger">Reset Form</button>
+        <button type="submit" (click)="locaragDataPrint()" class="btn btn-danger">Print Local Storage Data</button>
+    </form>
+</div>

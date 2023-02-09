@@ -1,0 +1,23 @@
+<div class="headerPart">
+    <h1>Form Group & Array</h1>
+</div>
+
+
+<form [formGroup]="addForm">
+    <input type="text" formControlName="username" [(ngModel)]="_username" placeholder="username">
+    <input type="text" formControlName="mobile" [(ngModel)]="_mobile" placeholder="mobile">
+    
+    <div formGroupName="innerGroup">
+        <input type="text" formControlName="firstname" [(ngModel)]="_firstname" placeholder="first name">
+        <input type="text" formControlName="lastname" [(ngModel)]="_lastname" placeholder="last name">
+    </div>
+    
+    <div formArrayName="addEmployee">
+        <div *ngFor="let array of addForm.get('addEmployee').controls; index as i">
+            <input type="text" formControlName="{{i}}" placeholder="Employee" />
+        </div>
+        <button (click)="addMore()" type="button">Add</button>
+    </div>
+
+    <button type="button" (click)="submitButton()">Submit</button>
+</form>

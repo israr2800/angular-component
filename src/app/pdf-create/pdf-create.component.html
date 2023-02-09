@@ -1,0 +1,32 @@
+<div class="headerPart">
+    <h1>PDF Generate Angular</h1>
+    <p>https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/</p>
+    <p>npm install jspdf</p>
+</div>
+
+<div class="container" id="htmlData">
+    <div class="someStyle">
+
+    </div>
+    <div class="row">
+      <div class="col-md-8" >
+        <table class="table table-bordered">
+          <tr class="table-primary">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr *ngFor="let user of USERS">
+            <th>{{user.id}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-4 text-right">
+        <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+      </div>
+    </div>
+  </div>

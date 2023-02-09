@@ -1,0 +1,31 @@
+<div class="headerPart">
+    <h1>Authentication Registration</h1>
+    <p>In fake authentication jwt-json-server</p>
+</div>
+
+<div class="container">
+    <form [formGroup]="authForm">
+        <input type="text" formControlName="email" placeholder="email"><br><br>
+        <input type="text" formControlName="password" placeholder="password"><br><br>
+        <button (click)="registerbtn()">Register Now</button>
+    </form>
+
+
+
+    <br><br>
+    <h1>MAKING ENTRY IN "PRODUCT" API</h1>
+
+    <form [formGroup]="productForm" [ngClass]="{'has-error':submitted}">
+        <input type="text" formControlName="name" placeholder="name"><br><br>
+        <input type="text" formControlName="cost" placeholder="cost"><br><br>
+        <div class="error" *ngIf="submitted && productForm.controls.cost.errors">
+            <p *ngIf="cost.errors?.required">Cost Required</p>
+            <p *ngIf="cost.errors?.pattern">Cost must be Numeric Value</p>
+        </div>
+        <!-- <div *ngIf="productForm.get('cost').hasError('pattern') && productForm.get('cost').touched">
+            Input should be Numeric only
+        </div> -->
+        <button (click)="productPost()">Post in product</button>
+    </form>
+
+</div>

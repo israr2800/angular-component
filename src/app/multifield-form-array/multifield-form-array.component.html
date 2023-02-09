@@ -1,0 +1,37 @@
+<div class="headerPart">
+    <h1>Multifield Form array</h1>
+    <!-- <p style="color:red">INCOMPLETE:- when using ngModel unable to print form-array data individually</p> -->
+    <p>https://stackblitz.com/edit/form-array-angular?file=src%2Fapp%2Fapp.component.ts</p>
+</div>
+
+<form [formGroup]="addForm" [ngClass]="errorOccured? 'has-error':''">
+    <input type="text" formControlName="username" [(ngModel)]="_username" placeholder="username">
+    
+    <span *ngIf="errorOccured && addForm.get('username').hasError('required')">required</span>
+    <span *ngIf="errorOccured && addForm.get('username').hasError('pattern')">Only text Allowed</span>
+
+    <input type="text" formControlName="age" [(ngModel)]="_age" placeholder="age">
+
+    <p>&nbsp;</p>
+    <p class="heading">Inner Form</p>
+
+    <div formArrayName="formArray" *ngFor="let item of addForm.get('formArray').controls; let i = index;">
+
+        <div [formGroupName]="i">
+            <input type="text" formControlName="mobile" [ngClass]="" placeholder="mobile">
+
+            <span *ngIf="arrayError && item.controls.mobile.errors">
+                <span *ngIf="item.controls['mobile'].errors?.required">Required</span>
+                <span *ngIf="item.controls['mobile'].errors?.pattern">Only Number Allowed</span>
+            </span>
+            
+            <input type="text" formControlName="email" placeholder="email">
+            <button (click)="removeSkill(i)">Remove</button>
+        </div>
+
+    </div>
+    
+    <button (click)="addMore()">Add More</button>
+
+    <button (click)="submitButton()">Submit Form</button>
+</form>

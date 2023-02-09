@@ -1,0 +1,71 @@
+<div class="headerPart">
+    <h3>REVISE: Show API List from Json API</h3>
+    <ul>
+        <li>if Want to check infinite scroll feature then change "myData" api response to "loadmoreData" and remove "paginate" codes</li>
+    </ul>
+</div>
+
+<div class="container">
+
+    <table>
+        <thead>
+        <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>User Id</th>
+                <th>Completion</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <input type="text" placeholder="Search from table here" [(ngModel)]="tableSearch">
+            <tr *ngFor="let item of myData | search: tableSearch | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalLength }">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>
+                    <input type="text" [(ngModel)]="item.userId">
+                </td>
+                <td>{{item.completed}}</td>
+                <td>
+                    <button (click)="dec(item)">-</button>
+                    <button (click)="inc(item)">+</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"></div>
+
+    <pagination-controls (pageChange)="p = $event" [autoHide]="true"></pagination-controls>
+
+</div>
+
+<table>
+    <thead>
+    <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>User Id</th>
+            <th>Completion</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rm of removedDatat">
+            <td>{{rm.id}}</td>
+            <td>{{rm.title}}</td>
+            <td>
+                <input type="text" [(ngModel)]="rm.userId">
+            </td>
+            <td>{{rm.completed}}</td>
+            <td>
+                <button (click)="dec(rm)">-</button>
+                <button (click)="inc(rm)">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,32 @@
+<div class="headerPart">
+    <h1>Transfer one Array item to another array</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-lg-4">
+            <h3>Array 1</h3>
+            <div *ngFor="let item of array1">
+                {{item.id}} | {{item.name}} | {{item.age}}
+            </div>
+
+            <button type="button" (click)="button1()">>> 1</button>
+        </div>
+
+        <div class="col-lg-4">
+            <h3>Array 2</h3>
+            <div *ngFor="let item of array2">
+                {{item.id}} | {{item.name}} | {{item.age}}
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <h3>Array 3</h3>
+            <div *ngFor="let item of array2">
+                {{item.id}} | {{item.name}} | {{item.age}}
+            </div>
+        </div>
+
+    </div>
+</div>

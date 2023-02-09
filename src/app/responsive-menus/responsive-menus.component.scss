@@ -1,0 +1,43 @@
+.menuIcon {
+    @media (min-width: 992px) {
+        display: none;
+    }
+    @media (max-width: 991px) {
+        display: block;
+    }
+}
+
+.responsiveMenu {
+    background: red;
+    @media (min-width: 992px) {
+        display: block;
+    }
+    @media (max-width: 991px) {
+        display: none;
+    }
+    ul {
+        li {
+            display: inline-block;
+            list-style: none;
+            padding: 1em 1em;
+            cursor: pointer;
+            color: #fff;
+            position: relative;
+        }
+    }
+}
+
+.responsiveMenu.enable {
+    @media (max-width: 991px) {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 200px;
+        height: 100%;
+    }
+    mat-menu {
+        position: relative;
+        left: 0;
+        width: 100%;
+    }
+}

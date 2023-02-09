@@ -1,0 +1,12 @@
+<div class="headerPart">
+    <h1>Authentication Login</h1>
+    <p>In fake authentication jwt-json-server</p>
+</div>
+
+<div class="container">
+    <form [formGroup]="authLogin">
+        <input type="text" formControlName="email" [(ngModel)]="user" placeholder="email"><br>
+        <input type="text" formControlName="password" [(ngModel)]="pwd" placeholder="password"><br>
+        <button (click)="login()">Login Now</button>
+    </form>
+</div>

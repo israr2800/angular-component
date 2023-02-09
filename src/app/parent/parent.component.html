@@ -1,0 +1,14 @@
+<div class="headerPart">
+    <h1>Parent Page</h1>
+</div>
+
+<ul list-style>
+    <li *ngFor="let item of array" (click)="changeValue(item.list)">
+        {{item.list}}
+    </li>
+</ul>
+
+<h1>Result: {{result}}</h1>
+<button routerLink="/child">Go To Child Page</button>
+
+<app-child [childResult]="result"></app-child>

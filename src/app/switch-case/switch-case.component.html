@@ -1,0 +1,24 @@
+<div class="headerPart">
+    <h1>Switch Case</h1>
+</div>
+
+<div class="container">
+    <button class="btn btn-info" (click)="redbtn()">Red</button>
+    <button class="btn btn-info" (click)="greenbtn()">Green</button>
+    <button class="btn btn-info" (click)="bluebtn()">Blue</button>
+    
+    <div [ngSwitch]="switchWrapper" class="switchBox">
+        <div *ngSwitchDefault>
+            Default 
+        </div>
+        <div *ngSwitchCase="'red'">
+            Red
+        </div>
+        <div *ngSwitchCase="'green'">
+            Green
+        </div>
+        <div *ngSwitchCase="'blue'">
+            Blue
+        </div>
+    </div>
+</div>

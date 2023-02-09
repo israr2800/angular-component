@@ -1,0 +1,17 @@
+<div class="headerPart">
+    <h1>auth-update-list works!</h1>
+</div>
+
+<div class="container">
+
+    <form [formGroup]="authUpdateForm" [ngClass]="{'has-error':submitted}">
+        <input type="text" formControlName="name" placeholder="name"><br><br>
+        <input type="text" formControlName="cost" placeholder="cost"><br><br>
+        <div class="error" *ngIf="submitted && authUpdateForm.controls.cost.errors">
+            <p *ngIf="cost.errors?.required">Cost Required</p>
+            <p *ngIf="cost.errors?.pattern">Only numeric value allowed</p>
+        </div>
+        <button (click)="updateList()">Post in product</button>
+    </form>
+
+</div>

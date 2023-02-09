@@ -1,0 +1,8 @@
+<div class="container">
+    <p>input checkbox true-false checking!</p>
+
+    <input type="checkbox" [checked]="isChecked" value="israr ahmad" (change)="isCheckedChange($event)">Checkbox <br> <br>
+
+    <button [disabled]="isDisabled" type="button" (click)="buttonClick()">Submit <span>{{value}}</span> </button>
+
+</div>

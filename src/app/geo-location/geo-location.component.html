@@ -1,0 +1,129 @@
+<h1>For IONIC 3 ONLY</h1>
+
+<!-- <====== TS FILE =====> -->
+<!-- public nativeGeocoder: NativeGeocoder, public geo: Geolocation, -->
+<!-- // GETTING LAT AND LOING GEOLOCATION
+// getLocation() {
+//     this.geo.getCurrentPosition().then((res)=>{
+//       var lat = res.coords.latitude;
+//       var lng = res.coords.longitude
+//       this.reverseGeocoding(lat, lng)
+//     }).catch(error=>{
+//       alert(error);
+//     })
+// }
+// GETTING LAT AND LOING GEOLOCATION END
+
+// NATIVE GEOCODER
+
+// reverseGeocoding(lat, lng): Promise<any> {
+
+//   return new Promise((resolve, reject)=> {
+
+//     var options: NativeGeocoderOptions = {
+//       useLocale: true,
+//       maxResults: 1
+//     }
+
+//     this.nativeGeocoder.reverseGeocode(lat, lng, options)
+
+//     .then((result: NativeGeocoderReverseResult[]) => {
+
+//       this.locationResult = result[0].areasOfInterest + "" + result[0].thoroughfare+" ,"+result[0].subLocality+" ,"+result[0].locality+", "+result[0].countryName+", "+result[0].postalCode;
+
+//       resolve(this.locationResult)
+
+//     }).catch((error)=>{
+
+//       alert(error);
+
+//       reject(error);
+//     })
+
+//   })
+
+// } -->
+
+
+<!-- <====== HTML FILE =====> -->
+<!-- <h1>{{currentLocation}}</h1> -->
+<!-- <div>
+                <p>{{items.latitude}}</p>
+                <p>{{items.longitude}}</p>
+                <p>{{items.countryCode}}</p>
+                <p>{{items.countryName}}</p>
+            </div> -->
+
+
+
+
+<!-- UPLOAD PHOTOS -->
+
+<!-- <img src="{{profileImg}}" profileImage> -->
+<!-- <div icon (click)="profilePhotoupdate()">
+    <ion-icon name="camera"></ion-icon>
+</div> -->
+
+
+<!-- profilePhotoupdate() {
+
+    // const actionSheet = this.actionSheetCtrl.create({
+    //   title: 'Choose Option:',
+    //   buttons: [
+    //         {
+    //       text: 'Camera',
+    //       role: 'camera',
+    //       icon: 'camera',
+    //       handler: () => {
+
+    //         alert('Camera clicked');
+
+    //         this.camera.getPicture({
+    //           sourceType: this.camera.PictureSourceType.CAMERA,
+    //           destinationType: this.camera.DestinationType.DATA_URL
+    //         }).then((result)=>{
+
+    //           this.profileImg = 'data:image/jpeg;base64,' + result
+    //           let ddd = this.profileImg;
+
+    //           this.storage.set("photos", ddd)
+
+    //           this.storage.get("photos").then((res)=>{
+    //             this.profileImg = res
+    //           })
+
+    //         }).catch(error=>{
+    //           console.log(error);
+    //         })
+
+    //       }
+    //     },
+    //     {
+    //       text: 'From Gallery',
+    //       role: 'button',
+    //       icon: 'image',
+    //       handler: () => {
+    //         console.log('Gallery Clicked');
+
+    //         this.camera.getPicture({
+    //           sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+    //           destinationType: this.camera.DestinationType.FILE_URI
+    //         }).then((result)=>{
+    //           this.profileImg = result;
+    //         }).catch(error=>{
+    //           alert(error);
+    //         })
+
+    //       }
+    //     },
+    //     {
+    //       text: 'Cancel',
+    //       role: 'cancel',
+    //       handler: () => {
+    //         console.log('Cancel clicked');
+    //       }
+    //     }
+    //   ]
+    // });
+    // actionSheet.present();
+  } -->

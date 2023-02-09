@@ -1,0 +1,52 @@
+<p>https://stackblitz.com/edit/angular-ivy-xrfjv8?file=README.md</p>
+
+<ul>
+  <li>1) Filter users that are less than 18 y.o.</li>
+  <li>2) Make all prices to be displayed in X.XX format (e.g. 5.50 instead of 5.5)</li>
+  <li>3) Change code to display only subscriptions of selected user</li>
+</ul>
+
+<h2 class="heading">Select box</h2>
+
+<div class="user-selector__container">
+
+  <h2>User selector</h2>
+
+  <label class="user-selector__label" for="userSelector"> Choose User </label>
+
+  <select id="userSelector" class="user-selector__select" (change)="userChange($event)">
+
+    <option *ngFor="let user of printUsers" [value]="user.id">
+      {{ user.name }}, {{ user.age }}
+    </option>
+
+  </select>
+
+</div>
+
+
+<div class="subscription-list__container">
+  <h2>
+    Subscription List
+  </h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <td>Id: </td>
+        <td>Name: </td>
+        <td>User Id: </td>
+        <td>Price: </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subscription of currentSubs">
+        <td>{{subscription.id}}</td>
+        <td>{{subscription.name}}</td>
+        <td>{{subscription.userId}}</td>
+        <td>{{subscription.price | number: '1.2-2'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

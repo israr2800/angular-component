@@ -1,0 +1,47 @@
+<div class="headerPart">
+    <h3>Users Registration</h3>
+</div>
+
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show alertAbsolute" role="alert">
+    <strong>Data Updated Succesful!</strong> Update data has been sent to API Successfull!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="container">
+    <form [formGroup]="registrationForm">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Choose a userid</label>
+            <input type="text" class="form-control" formControlName="userid">
+            <small *ngIf="userid.invalid && userid.touched" class="form-text text-danger">Invalid userid</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Full Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <small *ngIf="name.invalid && name.touched" class="form-text text-danger">Invalid Name</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Location</label>
+            <input type="text" class="form-control" formControlName="location">
+            <small *ngIf="location.invalid && location.touched" class="form-text text-danger">Invalid Location</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+            <small *ngIf="location.invalid && location.touched" class="form-text text-danger">Invalid Location</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Password</label>
+            <input type="text" class="form-control" formControlName="password">
+            <small *ngIf="password.invalid && password.touched" class="form-text text-danger">Invalid Password</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Confirm Password</label>
+            <input type="text" class="form-control" formControlName="confirmPassword">
+            <small *ngIf="confirmPassword.invalid && confirmPassword.touched" class="form-text text-danger">Invalid Confirm Password</small>
+        </div>
+        <button type="submit" (click)="registerbtn()" [disabled]="registrationForm.invalid" class="btn btn-success">Submit Form</button>
+        <button type="submit" (click)="resetform()" class="btn btn-danger">Reset</button>
+    </form>
+</div>

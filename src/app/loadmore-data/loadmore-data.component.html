@@ -1,0 +1,42 @@
+<div class="headerPart">
+    <h3>Load More Data Page</h3>
+</div>
+
+
+<div style="background: #f5f5f5; margin-bottom: 15px; margin-top: 15px;">
+    <input type="text" class="form-control" placeholder="searching..." [(ngModel)]="tableSearch" />
+</div>
+
+
+<div *ngIf="dataList.length !=0; else notFound">
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>User Id</th>
+                <th>Completion</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- filter:tableSearch -->
+            <tr *ngFor="let item of totalData | search : tableSearch">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.userId}}</td>
+                <td>{{item.completed}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" routerLink="/update-data/{{item.id}}">Edit</button>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button (click)="showmore()">Load More</button>
+
+<ng-template #notFound>
+    <h1>List Not Available</h1>
+</ng-template>
