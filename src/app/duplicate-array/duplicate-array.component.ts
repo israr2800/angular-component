@@ -21,7 +21,7 @@ export class DuplicateArrayComponent implements OnInit {
       name: 'rahul'
     },
     {
-      id: 3,
+      id: 2,
       name: 'rakesh'
     }
   ]
@@ -37,7 +37,7 @@ export class DuplicateArrayComponent implements OnInit {
 
     console.log("printvalue: ", valuarra);
   
-    this.finduplicate = valuarra.filter((res, index) => valuarra.indexOf(res) !== index );
+    this.finduplicate = this.nearay.filter((res, index) => valuarra.indexOf(res.id) !== index );
     // this.finduplicate = valuarra.filter((res, index) => valuarra.indexOf(res) == index ); //remove '!' sign to remove duplicate values
     
 

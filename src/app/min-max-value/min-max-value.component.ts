@@ -28,9 +28,8 @@ export class MinMaxValueComponent implements OnInit {
   ngOnInit(): void {
     var newvar = [1, 7, 1, 3, 1];
 
-    this.currentResult = Math.min(...newvar);
-
-    this.reduceResult = this.namearray.reduce((value, index) => value + index.id,0);
+    this.currentResult = Math.min(...newvar); // find min or max;
+    this.reduceResult = this.namearray.reduce((value, index) => value + index.id,0); // calculate all items age in total
 
   }
 

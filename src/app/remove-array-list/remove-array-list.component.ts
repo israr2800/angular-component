@@ -29,6 +29,15 @@ export class RemoveArrayListComponent implements OnInit {
     { id: 5, name: 'rakesh yadav', age: 14 },
   ]
 
+  testArray: any = [ { id: 2, name: 'ritesh roy', age: 11 },
+  { id: 3, name: 'rahul kumar', age: 12 },
+  { id: 4, name: 'pankaj kumar', age: 13 },
+  { id: 5, name: 'rakesh yadav', age: 14 },]
+
+  testArray2 = [
+    { id: 10, name: 'new added', age: 16 },
+  ]
+
   newarraya: any = []
 
   constructor() { }
@@ -58,7 +67,7 @@ export class RemoveArrayListComponent implements OnInit {
 
   deleteButton(item: any) {
     let id = this.arrayNested.indexOf(item); // get index of current item
-    this.arrayNested.splice(id, 1);
+    this.arrayNested.splice(id, 1); // to delete the selected array item by index value
   }
 
   checkChange(item: any, event: any) {
@@ -72,9 +81,9 @@ export class RemoveArrayListComponent implements OnInit {
     }
     else {
 
-      check = this.newArray.indexOf(item);
+      let currentId = this.newArray.indexOf(item);
 
-      this.newArray.splice(check, 1);
+      this.newArray.splice(currentId, 1);
       console.log("arraylist: ", this.newArray);
     }
 
@@ -91,6 +100,7 @@ export class RemoveArrayListComponent implements OnInit {
       console.log(cid);
       this.arrayNested.splice(cid, 1);
     })
+
     // israr change news test git
     //new lines also added
   }

@@ -43,10 +43,8 @@ export class FilterAndSortComponent implements OnInit {
     // sorted value=======================
 
     this.sorting = this.namearray.sort((a, b) => a.age - b.age);
-    // newvar.sort((a, b) => a.value - b.value);
-
-    // this.sorting = newvar.sort().reverse() // decending order
-    
+    // newvar.sort((a, b) => a-b);
+    // this.sorting = newvar.sort((a, b) => a - b);
     console.log("sorted: ", this.sorting);
   
   }
