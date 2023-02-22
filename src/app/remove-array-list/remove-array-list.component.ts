@@ -97,7 +97,7 @@ export class RemoveArrayListComponent implements OnInit {
 
     this.newArray.forEach((item: any) => {
       let cid = this.arrayNested.indexOf(item);
-      console.log(cid);
+      console.log("cid code: ", cid);
       this.arrayNested.splice(cid, 1);
     })
 
